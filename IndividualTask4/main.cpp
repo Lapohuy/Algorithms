@@ -24,8 +24,8 @@ int main()
 {
 	srand(time(NULL));
 
-	clock_t timeStart;
-	clock_t timeEnd;
+	clock_t time_start;
+	clock_t time_end;
 
 	string values[map_size];
 	string keys[map_size];
@@ -40,29 +40,29 @@ int main()
 
 	Map* map = map_create();
 
-	timeStart = clock();
+	time_start = clock();
 
 	for (unsigned int i = 0; i < map_size; i++)
 		set_pair(map, keys[i], values[i]);
 
-	timeEnd = clock();
+	time_end = clock();
 
 	map_delete(map);
 
-	cout << "map.h time: " << (double)(timeEnd - timeStart) / CLOCKS_PER_SEC << endl;
+	cout << "map.h time: " << (double)(time_end - time_start) / CLOCKS_PER_SEC << endl;
 
 	// test STL unordered_map 
 
 	unordered_map<string, string> map_stl;
 
-	timeStart = clock();
+	time_start = clock();
 
 	for (int i = 0; i < map_size; i++)
 		map_stl.insert(pair<string, string>(keys[i], values[i]));
 
-	timeEnd = clock();
+	time_end = clock();
 
-	std::cout << "STL unordered_map time: " << (double)(timeEnd - timeStart) / CLOCKS_PER_SEC << std::endl;
+	std::cout << "STL unordered_map time: " << (double)(time_end - time_start) / CLOCKS_PER_SEC << std::endl;
 
 	return 0;
 }
