@@ -44,7 +44,7 @@ size_t vector_size(const Vector* vector)
 
 void vector_resize(Vector* vector, size_t size)
 {
-	if ((size < vector->size) || (size >= vector->reserved_size))
+	if ((size < vector->size) || (size >= vector->reserved_size)) //could work without that condition in case of function purpose
 	{
 		vector->reserved_size = size * 2;
 		Data* new_data = new Data[vector->reserved_size];

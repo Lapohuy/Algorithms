@@ -22,7 +22,7 @@ void map_delete(Map* map)
 	delete map;
 }
 
-bool ring_search_value(Map* map, const string key, string& value) //найти значение по ключу
+bool ring_search_value(Map* map, const string key, string& value) //search for the value by key
 {
 	unsigned int count = 0;
 	unsigned int hash = create_hash(key, map->M, count);
@@ -44,7 +44,7 @@ bool ring_search_value(Map* map, const string key, string& value) //найти значен
 	return false;
 }
 
-bool ring_search_clear(Map* map, const string key) //удалить значение по ключу (очистить ячейку)
+bool ring_search_clear(Map* map, const string key) //delete the value by key (clear the item)
 {
 	unsigned int count = 0;
 	unsigned int hash = create_hash(key, map->M, count);
@@ -107,7 +107,7 @@ void table_resize(Map* map)
 	new_table = nullptr;
 }
 
-void set_pair(Map* map, const string key, const string value) //добавить пару ключ-значение
+void set_pair(Map* map, const string key, const string value) //add pair key (string) - value (string)
 {
 	map->N += 1;
 	if (((double)map->N / map->M) >= max_load_factor)

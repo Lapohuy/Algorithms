@@ -5,7 +5,8 @@ using namespace std;
 #ifndef HASHTABLE_H
 #define HASHTABLE_H
 
-const int prime = 13;
+const int p = 13;
+const int k = 1;
 
 enum class states
 {

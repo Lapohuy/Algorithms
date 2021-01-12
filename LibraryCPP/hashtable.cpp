@@ -3,14 +3,14 @@
 void alg_hash(unsigned int& hash, const string key, const unsigned int M)
 {
 	for (unsigned int i = 0; i < key.length(); i++)
-		hash = hash * prime + key[i];
+		hash = hash * p + key[i];
 }
 
 unsigned int create_hash(const string key, const unsigned int M, int i)
 {
 	unsigned int hash = 0;
 	alg_hash(hash, key, M);
-	return (hash + i) % M;
+	return (hash + (i * k)) % M;
 }
 
 struct HT_item

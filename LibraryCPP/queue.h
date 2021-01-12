@@ -3,6 +3,8 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
+const int start_size = 30;
+
 // Queue
 // Stores integer values inside
 struct Queue;
